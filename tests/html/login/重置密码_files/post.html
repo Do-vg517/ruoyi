@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost/system/post -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="kyA1CEV7Jh1kY+2xzblX7SCuHs3kazu8VnETH0LWPEE=" name="csrf-token">
+	<title>岗位列表</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+<body class="gray-bg">
+	<div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+				<form id="post-form">
+					<div class="select-list">
+						<ul>
+							<li>
+								岗位编码：<input type="text" name="postCode">
+							</li>
+							<li>
+								岗位名称：<input type="text" name="postName">
+							</li>
+							<li>
+								岗位状态：<select name="status">
+									<option value="">所有</option>
+									<option value="0">正常</option>
+									<option value="1">停用</option>
+								</select>
+							</li>
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+							    <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+			
+			
+	        
+	        <div class="col-sm-12 select-table table-striped">
+			    <div class="bootstrap-table bootstrap3">
+      <div class="fixed-table-toolbar"><div class="bs-bars pull-left"><div class="btn-group-sm" id="toolbar" role="group">
+				<a class="btn btn-success" onclick="$.operate.add()">
+	                <i class="fa fa-plus"></i> 新增
+	            </a>
+				<a class="btn btn-primary single disabled" onclick="$.operate.edit()">
+		            <i class="fa fa-edit"></i> 修改
+		        </a>
+				<a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
+		            <i class="fa fa-remove"></i> 删除
+		        </a>
+				<a class="btn btn-warning" onclick="$.table.exportExcel()">
+		            <i class="fa fa-download"></i> 导出
+		        </a>
+	        </div></div><div class="columns columns-right btn-group pull-right"><button class="btn btn-default btn-outline" type="button" name="search" aria-label="隐藏/显示搜索" title="隐藏/显示搜索"><i class="glyphicon glyphicon-search"></i> </button><button class="btn btn-default btn-outline" type="button" name="refresh" aria-label="刷新" title="刷新"><i class="glyphicon glyphicon-refresh icon-refresh"></i> </button><button class="btn btn-default btn-outline" type="button" name="toggle" aria-label="显示卡片视图" title="显示卡片视图"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i> </button><div class="keep-open btn-group">
+            <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown" aria-label="列" title="列">
+            <i class="glyphicon glyphicon-th icon-th"></i>
+            
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu"><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="postId" value="1" checked="checked"> <span>岗位编号</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="postCode" value="2" checked="checked"> <span>岗位编码</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="postName" value="3" checked="checked"> <span>岗位名称</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="postSort" value="4" checked="checked"> <span>显示顺序</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="status" value="5" checked="checked"> <span>状态</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="createTime" value="6" checked="checked"> <span>创建时间</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="7" value="7" checked="checked"> <span>操作</span></label></li></ul></div></div></div>
+      
+      <div class="fixed-table-container" style="padding-bottom: 0px;">
+      <div class="fixed-table-header" style="display: none;"><table></table></div>
+      <div class="fixed-table-body">
+      <div class="fixed-table-loading table table-bordered table-hover" style="top: 35.0625px;">
+      <span class="loading-wrap">
+    <span class="loading-text" style="font-size: 13px;">正在努力地加载数据中，请稍候</span>
+    <span class="animation-wrap"><span class="animation-dot"></span></span>
+    </span>
+  
+      </div>
+      <table id="bootstrap-table" class="table table-bordered table-hover"><thead class=""><tr><th class="bs-checkbox " style="width: 36px; " data-field="0"><div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div><div class="fht-cell"></div></th><th data-field="postId"><div class="th-inner ">岗位编号</div><div class="fht-cell"></div></th><th data-field="postCode"><div class="th-inner sortable both">岗位编码</div><div class="fht-cell"></div></th><th data-field="postName"><div class="th-inner sortable both">岗位名称</div><div class="fht-cell"></div></th><th data-field="postSort"><div class="th-inner sortable both asc">显示顺序</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="status"><div class="th-inner ">状态</div><div class="fht-cell"></div></th><th data-field="createTime"><div class="th-inner sortable both">创建时间</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="7"><div class="th-inner ">操作</div><div class="fht-cell"></div></th></tr></thead><tbody><tr data-index="0"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="0" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">1</td><td class="">ceo</td><td class="">董事长</td><td class="">1</td><td class="" style="text-align: center;"><span class="badge badge-primary">正常</span></td><td class="">2026-03-02 15:44:42</td><td class="" style="text-align: center;"><a class="btn btn-success btn-xs " href="javascript:void(0)" onclick="$.operate.edit(&#39;1&#39;)"><i class="fa fa-edit"></i>编辑</a> <a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="$.operate.remove(&#39;1&#39;)"><i class="fa fa-remove"></i>删除</a></td></tr><tr data-index="1"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="1" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">2</td><td class="">se</td><td class="">项目经理</td><td class="">2</td><td class="" style="text-align: center;"><span class="badge badge-primary">正常</span></td><td class="">2026-03-02 15:44:42</td><td class="" style="text-align: center;"><a class="btn btn-success btn-xs " href="javascript:void(0)" onclick="$.operate.edit(&#39;2&#39;)"><i class="fa fa-edit"></i>编辑</a> <a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="$.operate.remove(&#39;2&#39;)"><i class="fa fa-remove"></i>删除</a></td></tr><tr data-index="2"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="2" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">3</td><td class="">hr</td><td class="">人力资源</td><td class="">3</td><td class="" style="text-align: center;"><span class="badge badge-primary">正常</span></td><td class="">2026-03-02 15:44:42</td><td class="" style="text-align: center;"><a class="btn btn-success btn-xs " href="javascript:void(0)" onclick="$.operate.edit(&#39;3&#39;)"><i class="fa fa-edit"></i>编辑</a> <a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="$.operate.remove(&#39;3&#39;)"><i class="fa fa-remove"></i>删除</a></td></tr><tr data-index="3"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="3" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">4</td><td class="">user</td><td class="">普通员工</td><td class="">4</td><td class="" style="text-align: center;"><span class="badge badge-primary">正常</span></td><td class="">2026-03-02 15:44:42</td><td class="" style="text-align: center;"><a class="btn btn-success btn-xs " href="javascript:void(0)" onclick="$.operate.edit(&#39;4&#39;)"><i class="fa fa-edit"></i>编辑</a> <a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="$.operate.remove(&#39;4&#39;)"><i class="fa fa-remove"></i>删除</a></td></tr></tbody></table></div>
+      <div class="fixed-table-footer"></div>
+      </div>
+      <div class="fixed-table-pagination" style=""><div class="pull-left pagination-detail"><span class="pagination-info">
+      显示第 1 到第 4 条记录，总共 4 条记录
+      </span><div class="page-list" style="display: none;">每页显示 <div class="btn-group dropdown dropup">
+        <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="page-size">
+        10
+        </span>
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"><li role="menuitem" class="active"><a href="http://localhost/system/post#">10</a></li></ul></div> 条记录</div></div><div class="pull-right pagination" style="display: none;"><ul class="pagination pagination-outline"><li class="page-item page-pre disabled"><a class="page-link" aria-label="上一页" href="javascript:void(0)">‹</a></li><li class="page-item active"><a class="page-link" aria-label="第1页" href="javascript:void(0)">1</a></li><li class="page-item page-next disabled"><a class="page-link" aria-label="下一页" href="javascript:void(0)">›</a></li></ul></div></div>
+      </div><div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	<script>
+		var editFlag = "";
+		var removeFlag = "";
+		var datas = [{"createBy":"admin","createTime":"2026-03-02 15:44:45","updateBy":null,"updateTime":null,"remark":"\u6B63\u5E38\u72B6\u6001","dictCode":6,"dictSort":1,"dictLabel":"\u6B63\u5E38","dictValue":"0","dictType":"sys_normal_disable","cssClass":"","listClass":"primary","isDefault":"Y","status":"0","default":true},{"createBy":"admin","createTime":"2026-03-02 15:44:46","updateBy":null,"updateTime":null,"remark":"\u505C\u7528\u72B6\u6001","dictCode":7,"dictSort":2,"dictLabel":"\u505C\u7528","dictValue":"1","dictType":"sys_normal_disable","cssClass":"","listClass":"danger","isDefault":"N","status":"0","default":false}];
+		var prefix = ctx + "system/post";
+
+		$(function() {
+		    var options = {
+		        url: prefix + "/list",
+		        createUrl: prefix + "/add",
+		        updateUrl: prefix + "/edit/{id}",
+		        removeUrl: prefix + "/remove",
+		        exportUrl: prefix + "/export",
+		        sortName: "postSort",
+		        modalName: "岗位",
+		        columns: [{
+		            checkbox: true
+		        },
+		        {
+		            field: 'postId',
+		            title: '岗位编号'
+		        },
+		        {
+		            field: 'postCode',
+		            title: '岗位编码',
+		            sortable: true
+		        },
+		        {
+		            field: 'postName',
+		            title: '岗位名称',
+		            sortable: true
+		        },
+		        {
+		            field: 'postSort',
+		            title: '显示顺序',
+		            sortable: true
+		        },
+		        {
+		            field: 'status',
+		            title: '状态',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		            	return $.table.selectDictLabel(datas, value);
+		            }
+		        },
+		        {
+		            field: 'createTime',
+		            title: '创建时间',
+		            sortable: true
+		        },
+		        {
+		            title: '操作',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		                var actions = [];
+		                actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.postId + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+		                actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.postId + '\')"><i class="fa fa-remove"></i>删除</a>');
+		                return actions.join('');
+		            }
+		        }]
+		    };
+		    $.table.init(options);
+		});
+	</script>
+
+</body></html>

@@ -1,0 +1,70 @@
+# 登录测试数据
+login_data:
+  - username: "admin"
+    password: "123456"
+    expected: "若依系统首页"
+    desc: "管理员登录成功"
+
+# 新增用户测试数据
+add_user_data:
+  - user_name: "测试用户"
+    login_name: "test_user_01"
+    password: "Password123"
+    email: "test01@qq.com"
+    phonenumber: "13800138001"
+    dept: "研发部门"
+    role: "2" # 普通角色
+
+# 编辑用户测试数据
+edit_user_data:
+  - login_name: "test_user_01" # 用于搜索
+    user_name: "测试用户_已修改"
+    phonenumber: "13800138888"
+    email: "test01_edited@qq.com"
+    dept: "市场部门"
+    role: "2"
+
+# 删除用户测试数据
+delete_user_data:
+  - login_name: "test_user_01" # 用于搜索和删除
+
+# 新增角色测试数据
+add_role_data:
+  - role_name: "普通角色user4"
+    role_key: "common4"
+    role_sort: "1"
+    status: "0"
+    remark: "这是一个用于ui自动化测试创建的普通角色"
+
+
+# 专门用于权限修复测试的新增角色数据
+add_role_auth_setup_data:
+  - role_name: "数据权限编辑"
+    role_key: "common5"
+    role_sort: "1"
+    status: "0"
+    remark: "这是一个用于ui自动化测试创建的编辑权限的角色"
+    
+# 角色数据权限测试数据
+auth_role_data:
+  - role_name: "数据权限编辑" # 用于搜索  
+    data_scope: "2" # 自定义数据权限
+
+# 编辑角色测试数据
+edit_role_data:
+  - role_name: "普通角色user4_已修改" # 用于搜索
+    role_key: "common4"
+    role_sort: "1"
+    status: "0"
+    remark: "这是一个ui自动化测试修改后的普通角色"
+
+# 删除角色测试数据
+delete_role_data:
+  - role_name: "普通角色user4_已修改" # 用于搜索和删除
+
+
+
+# 重置密码测试数据
+reset_pwd_data:
+  - login_name: "test_user_01"
+    new_password: "NewPassword123"

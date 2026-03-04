@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!-- saved from url=(0017)http://localhost/ -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>若依系统首页</title>
+    <!-- 避免IE使用兼容模式 -->
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="http://localhost/favicon.ico" rel="shortcut icon">
+    <link href="./编辑角色_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./编辑角色_files/jquery.contextMenu.min.css" rel="stylesheet">
+    <link href="./编辑角色_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./编辑角色_files/animate.min.css" rel="stylesheet">
+    <link href="./编辑角色_files/style.min.css" rel="stylesheet">
+    <link href="./编辑角色_files/skins.css" rel="stylesheet">
+    <link href="./编辑角色_files/ry-ui.css" rel="stylesheet">
+<link rel="stylesheet" href="./编辑角色_files/layer.css" id="layuicss-layer"><link rel="stylesheet" href="./编辑角色_files/style.css" id="layuicss-thememoonstylecss"></head>
+<body class="fixed-sidebar full-height-layout gray-bg theme-dark skin-blue" style="overflow: hidden;">
+<div id="wrapper">
+
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close">
+            <i class="fa fa-times-circle"></i>
+        </div>
+        <a href="http://localhost/index">
+            <li class="logo hidden-xs">
+                <span class="logo-lg">RuoYi</span>
+            </li>
+         </a>
+        <div class="slimScrollDiv" style="position: relative; width: auto; height: 96%;"><div class="sidebar-collapse" style="width: auto; height: 96%;">
+            <ul class="nav in" id="side-menu" style="height: auto;">
+            	<li>
+            		<div class="user-panel">
+            			<a class="menuItem noactive" title="个人中心" href="http://localhost/system/user/profile" data-index="0">
+            				<div class="hide">个人中心</div>
+					        <div class="pull-left image">
+		                    	<img src="./编辑角色_files/profile.jpg" onerror="this.src=&#39;img/profile.jpg&#39;" class="img-circle" alt="User Image">
+					        </div>
+				        </a>
+				        <div class="pull-left info">
+				          <p>admin</p>
+				          <a href="javascript:;"><i class="fa fa-circle text-success"></i> 在线</a>
+				          <a href="http://localhost/logout" style="padding-left:5px;"><i class="fa fa-sign-out text-danger"></i> 注销</a>
+				        </div>
+				    </div>
+            	</li>
+                <li>
+                    <a class="menuItem" href="http://localhost/system/main" data-index="1"><i class="fa fa-home"></i> <span class="nav-label">首页</span> </a>
+                </li>
+                <li class="active">
+                	<a href="http://localhost/#" data-refresh="false">
+                		<i class="fa fa-gear"></i>
+                    	<span class="nav-label">系统管理</span>
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse in" style="height: auto;">
+						<li class="">
+							<a class="menuItem" href="http://localhost/system/user" data-refresh="false" data-index="2">用户管理</a>
+							
+							
+						</li>
+						<li class="active selected">
+							<a class="menuItem" href="http://localhost/system/role" data-refresh="false" data-index="3">角色管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/system/menu" data-refresh="false" data-index="4">菜单管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/system/dept" data-refresh="false" data-index="5">部门管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/system/post" data-refresh="false" data-index="6">岗位管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/system/dict" data-refresh="false" data-index="7">字典管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/system/config" data-refresh="false" data-index="8">参数设置</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/system/notice" data-refresh="false" data-index="9">通知公告</a>
+							
+							
+						</li>
+						<li>
+							
+							<a href="javascript:;">日志管理<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level collapse">
+								<li>
+								    <a class="menuItem" href="http://localhost/monitor/operlog" data-refresh="false" data-index="10">操作日志</a>
+								    
+								    
+								</li>
+								<li>
+								    <a class="menuItem" href="http://localhost/monitor/logininfor" data-refresh="false" data-index="11">登录日志</a>
+								    
+								    
+								</li>
+							</ul>
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="http://localhost/#" data-refresh="false">
+                		<i class="fa fa-video-camera"></i>
+                    	<span class="nav-label">系统监控</span>
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="http://localhost/monitor/online" data-refresh="false" data-index="12">在线用户</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/monitor/job" data-refresh="false" data-index="13">定时任务</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/monitor/data" data-refresh="false" data-index="14">数据监控</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/monitor/server" data-refresh="false" data-index="15">服务监控</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/monitor/cache" data-refresh="false" data-index="16">缓存监控</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="http://localhost/#" data-refresh="false">
+                		<i class="fa fa-bars"></i>
+                    	<span class="nav-label">系统工具</span>
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="http://localhost/tool/build" data-refresh="false" data-index="17">表单构建</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/tool/gen" data-refresh="false" data-index="18">代码生成</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="http://localhost/tool/swagger" data-refresh="false" data-index="19">系统接口</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a class="menuBlank" href="http://ruoyi.vip/" data-refresh="false">
+                		<i class="fa fa-location-arrow"></i>
+                    	<span class="nav-label">若依官网</span>
+                    	<span></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						
+					</ul>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-desktop"></i><span class="nav-label">实例演示</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li> <a>表单<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="http://localhost/demo/form/button" data-index="20">按钮</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/grid" data-index="21">栅格</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/select" data-index="22">下拉框</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/timeline" data-index="23">时间轴</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/progress_bars" data-index="24">进度条</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/basic" data-index="25">基本表单</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/cards" data-index="26">卡片列表</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/jasny" data-index="27">功能扩展</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/sortable" data-index="28">拖动排序</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/invoice" data-index="29">单据打印</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/labels_tips" data-index="30">标签 &amp; 提示</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/tabs_panels" data-index="31">选项卡 &amp; 面板</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/validate" data-index="32">表单校验</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/wizard" data-index="33">表单向导</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/upload" data-index="34">文件上传</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/datetime" data-index="35">日期和时间</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/summernote" data-index="36">富文本编辑器</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/duallistbox" data-index="37">左右互选组件</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/autocomplete" data-index="38">搜索自动补全</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/cxselect" data-index="39">多级联动下拉</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/form/localrefresh" data-index="40">Ajax局部刷新</a></li>
+							</ul>
+                        </li>
+                        <li> <a>表格<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="http://localhost/demo/table/search" data-index="41">查询条件</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/footer" data-index="42">数据汇总</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/groupHeader" data-index="43">组合表头</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/export" data-index="44">表格导出</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/textSearch" data-index="45">全文索引</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/exportSelected" data-index="46">导出选择列</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/remember" data-index="47">翻页记住选择</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/cookie" data-index="48">表格保存状态</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/pageGo" data-index="49">跳转至指定页</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/params" data-index="50">自定义查询参数</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/multi" data-index="51">初始多表格</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/button" data-index="52">点击按钮加载表格</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/data" data-index="53">直接加载表格数据</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/fixedColumns" data-index="54">表格冻结列</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/event" data-index="55">自定义触发事件</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/headerStyle" data-index="56">表格标题格式化</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/detail" data-index="57">表格细节视图</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/child" data-index="58">表格父子视图</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/image" data-index="59">表格图片预览</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/curd" data-index="60">动态增删改查</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/reorderRows" data-index="61">表格行拖拽操作</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/reorderColumns" data-index="62">表格列拖拽操作</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/resizable" data-index="63">表格列宽拖动</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/editable" data-index="64">表格行内编辑</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/subdata" data-index="65">主子表提交</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/refresh" data-index="66">表格自动刷新</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/print" data-index="67">表格打印配置</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/dynamicColumns" data-index="68">表格动态列</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/virtualScroll" data-index="69">表格虚拟滚动</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/customView" data-index="70">自定义视图分页</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/asynTree" data-index="71">异步加载表格树</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/table/other" data-index="72">表格其他操作</a></li>
+							</ul>
+                        </li>
+                        <li> <a>弹框<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="http://localhost/demo/modal/dialog" data-index="73">模态窗口</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/modal/layer" data-index="74">弹层组件</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/modal/table" data-index="75">弹层表格</a></li>
+							</ul>
+                        </li>
+                        <li> <a>操作<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="http://localhost/demo/operate/table" data-index="76">表格</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/operate/other" data-index="77">其他</a></li>
+							</ul>
+                        </li>
+                        <li> <a>报表<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="http://localhost/demo/report/echarts" data-index="78">百度ECharts</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/report/peity" data-index="79">peity</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/report/sparkline" data-index="80">sparkline</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/report/metrics" data-index="81">图表组合</a></li>
+							</ul>
+                        </li>
+                        <li> <a>图标<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="http://localhost/demo/icon/fontawesome" data-index="82">Font Awesome</a></li>
+								<li><a class="menuItem" href="http://localhost/demo/icon/glyphicons" data-index="83">Glyphicons</a></li>
+							</ul>
+                        </li>
+                        <li>
+	                        <a href="javascript:;"><i class="fa fa-sitemap"></i>四层菜单<span class="fa arrow"></span></a>
+	                        <ul class="nav nav-third-level collapse">
+	                            <li>
+	                                <a href="javascript:;" id="damian">三级菜单1<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level collapse">
+	                                    <li>
+	                                        <a href="javascript:;">四级菜单1</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:;">四级菜单2</a>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                            <li><a href="javascript:;">三级菜单2</a></li>
+	                        </ul>
+	                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><div class="slimScrollBar" style="background: rgb(153, 169, 191); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 845.188px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.9; z-index: 90; right: 1px;"></div></div>
+    </nav>
+    <!--左侧导航结束-->
+
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2" style="color:#FFF;" href="javascript:;" title="收起菜单">
+                    	<i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right welcome-message">
+                    <li><a data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="" href="http://doc.ruoyi.vip/ruoyi" target="_blank" data-original-title="开发文档"><i class="fa fa-question-circle"></i> 文档</a></li>
+                    <li><a data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="" href="javascript:;" id="lockScreen" data-original-title="锁定屏幕"><i class="fa fa-lock"></i> 锁屏</a></li>
+	                <li><a data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="" href="javascript:;" id="fullScreen" data-original-title="全屏显示"><i class="fa fa-arrows-alt"></i> 全屏</a></li>
+                    <li class="dropdown user-menu">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown">
+							<img src="./编辑角色_files/profile.jpg" onerror="this.src=&#39;img/profile.jpg&#39;" class="user-image">
+							<span class="hidden-xs">若依</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="mt5">
+								<a href="http://localhost/system/user/profile" class="menuItem noactive" data-index="84">
+								<i class="fa fa-user"></i> 个人中心</a>
+							</li>
+							<li>
+								<a onclick="resetPwd()">
+								<i class="fa fa-key"></i> 修改密码</a>
+							</li>
+							<li>
+								<a onclick="switchSkin()">
+								<i class="fa fa-dashboard"></i> 切换主题</a>
+							</li>
+							<li>
+								<a onclick="toggleMenu()">
+								<i class="fa fa-toggle-off"></i> 横向菜单</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="http://localhost/logout">
+								<i class="fa fa-sign-out"></i> 退出登录</a>
+							</li>
+						</ul>
+					</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row content-tabs">
+            <button class="roll-nav roll-left tabLeft">
+                <i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs menuTabs">
+                <div class="page-tabs-content" style="margin-left: 0px;">
+                    <a href="javascript:;" class="menuTab" data-id="/system/main">首页</a>
+                <a href="javascript:;" class="menuTab" data-id="/system/user">用户管理 <i class="fa fa-times-circle"></i></a><a href="javascript:;" class="active menuTab" data-id="/system/role">角色管理 <i class="fa fa-times-circle"></i></a></div>
+            </nav>
+            <button class="roll-nav roll-right tabRight">
+                <i class="fa fa-forward"></i>
+            </button>
+            <a href="javascript:void(0);" class="roll-nav roll-right tabReload"><i class="fa fa-refresh"></i> 刷新</a>
+        </div>
+
+        <a id="ax_close_max" class="ax_close_max" href="javascript:;" title="关闭全屏"> <i class="fa fa-times-circle-o"></i> </a>
+
+        <div class="row mainContent" id="content-main">
+            <iframe class="RuoYi_iframe" name="iframe0" width="100%" height="100%" data-id="/system/main" src="./编辑角色_files/main.html" frameborder="0" seamless="" style="display: none;"></iframe>
+        <iframe class="RuoYi_iframe" name="iframe2" width="100%" height="100%" src="./编辑角色_files/user.html" frameborder="0" data-id="/system/user" data-refresh="false" seamless="" style="display: none;"></iframe><iframe class="RuoYi_iframe" name="iframe3" width="100%" height="100%" src="./编辑角色_files/role.html" frameborder="0" data-id="/system/role" data-refresh="false" seamless=""></iframe></div>
+
+        <div class="footer">
+            <div class="pull-right">© 2026 RuoYi Copyright </div>
+        </div>
+    </div>
+    <!--右侧部分结束-->
+</div>
+<!-- 全局js -->
+<script src="./编辑角色_files/jquery.min.js.下载"></script>
+<script src="./编辑角色_files/bootstrap.min.js.下载"></script>
+<script src="./编辑角色_files/jquery.metisMenu.js.下载"></script>
+<script src="./编辑角色_files/jquery.slimscroll.min.js.下载"></script>
+<script src="./编辑角色_files/jquery.contextMenu.min.js.下载"></script>
+<script src="./编辑角色_files/jquery.blockUI.js.下载"></script>
+<script src="./编辑角色_files/layer.min.js.下载"></script>
+<script src="./编辑角色_files/ry-ui.js.下载"></script>
+<script src="./编辑角色_files/common.js.下载"></script>
+<script src="./编辑角色_files/index.js.下载"></script>
+<script src="./编辑角色_files/jquery.fullscreen.js.下载"></script>
+<script>
+window.history.forward(1);
+var ctx = "\/"; 
+var lockscreen = null; 
+if(lockscreen){window.top.location=ctx+"lockscreen";}
+// 皮肤缓存
+var skin = storage.get("skin");
+// history（表示去掉地址的#）否则地址以"#"形式展示
+var mode = "history";
+// 历史访问路径缓存
+var historyPath = storage.get("historyPath");
+// 是否页签与菜单联动
+var isLinkage = true;
+// 是否页签切换滚动到顶部
+var isScrollToTop = true;
+
+// 本地主题优先，未设置取系统配置
+if($.common.isNotEmpty(skin)){
+	$("body").addClass(skin.split('|')[0]);
+	$("body").addClass(skin.split('|')[1]);
+} else {
+	$("body").addClass("theme-dark");
+	$("body").addClass("skin-blue");
+}
+
+/* 用户管理-重置密码 */
+function resetPwd() {
+    var url = ctx + 'system/user/profile/resetPwd';
+    $.modal.open("重置密码", url, '770', '380');
+}
+
+/* 切换主题 */
+function switchSkin() {
+    layer.open({
+		type : 2,
+		shadeClose : true,
+		title : "切换主题",
+		area : ["530px", "386px"],
+		content : [ctx + "system/switchSkin", 'no']
+	})
+}
+
+/* 切换菜单 */
+function toggleMenu() {
+	$.modal.confirm("确认要切换成横向菜单吗？", function() {
+		$.get(ctx + 'system/menuStyle/topnav', function(result) {
+            window.location.reload();
+	    });
+	})
+}
+
+/** 刷新时访问路径页签 */
+function applyPath(url) {
+	$('a[href$="' + decodeURI(url) + '"]').click();
+	if (!$('a[href$="' + url + '"]').hasClass("noactive")) {
+	    $('a[href$="' + url + '"]').parent("li").addClass("selected").parents("li").addClass("active").end().parents("ul").addClass("in");
+	}
+}
+
+// 默认激活页签
+function tabActive() {
+    $('.menuTab[data-id="' + ctx + 'system/main"]').addClass('active');
+}
+
+$(function() {
+	var lockPath = storage.get('lockPath');
+	if($.common.equals("history", mode) && window.performance.navigation.type == 1) {
+		var url = storage.get('publicPath');
+	    if ($.common.isNotEmpty(url)) {
+	    	applyPath(url);
+	    } else {
+	        tabActive();
+	    }
+	} else if($.common.isNotEmpty(lockPath)) {
+	    applyPath(lockPath);
+	    storage.remove('lockPath');
+	} else {
+		var hash = location.hash;
+	    if ($.common.isNotEmpty(hash)) {
+	        var url = hash.substring(1, hash.length);
+	        applyPath(url);
+	    } else {
+	    	if($.common.equals("history", mode)) {
+	    		storage.set('publicPath', "");
+	    	}
+	        tabActive();
+	    }
+	}
+	
+	/* 初始密码提示 */
+	if(false) {
+		layer.confirm("您的密码还是初始密码，请修改密码！", {
+			icon: 0,
+			title: "安全提示",
+			btn: ['确认'	, '取消'],
+			offset: ['30%']
+		}, function (index) {
+			resetPwd();
+			layer.close(index);
+		});
+	}
+	
+	/* 过期密码提示 */
+	if(!false && false) {
+		layer.confirm("您的密码已过期，请尽快修改密码！", {
+			icon: 0,
+			title: "安全提示",
+			btn: ['确认'	, '取消'],
+			offset: ['30%']
+		}, function (index) {
+			resetPwd();
+			layer.close(index);
+		});
+	}
+	$("[data-toggle='tooltip']").tooltip();
+});
+</script>
+
+
+<ul class="context-menu-list context-menu-root" style="display: none;"><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-close"><span>关闭当前</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-window-close-o"><span>关闭其他</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-reply"><span>关闭左侧</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-share"><span>关闭右侧</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-window-close"><span>全部关闭</span></li><li class="context-menu-item context-menu-separator context-menu-not-selectable"></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-arrows-alt"><span>全屏显示</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-refresh"><span>刷新页面</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-link"><span>新窗口打开</span></li></ul><div class="layui-layer-move" id="layui-layer-move"></div><div class="layui-layer-shade" id="layui-layer-shade13" times="13" style="z-index: 19891026; background-color: rgb(0, 0, 0); opacity: 0.3;"></div><div class="layui-layer layui-layer-iframe layer-ext-moon" id="layui-layer13" type="iframe" times="13" showtime="0" contype="string" style="z-index: 19891027; width: 800px; height: 768px; position: fixed; top: 88.5px; left: 560px;"><div class="layui-layer-title" style="cursor: move;">修改角色</div><div class="layui-layer-content"><iframe scrolling="auto" allowtransparency="true" id="layui-layer-iframe13" name="layui-layer-iframe13" onload="this.className=&#39;&#39;;" class="" frameborder="0" src="./编辑角色_files/2.html" style="height: 671px;"></iframe></div><div class="layui-layer-setwin"><span class="layui-layer-min"></span><span class="layui-layer-max"></span><span class="layui-icon layui-icon-close layui-layer-close layui-layer-close1"></span></div><div class="layui-layer-btn"><a class="layui-layer-btn0">确定</a><a class="layui-layer-btn1">关闭</a></div><span class="layui-layer-resize"></span></div></body></html>

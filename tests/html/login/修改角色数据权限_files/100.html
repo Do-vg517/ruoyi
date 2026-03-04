@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost/system/role/authDataScope/100 -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="kyA1CEV7Jh1kY+2xzblX7SCuHs3kazu8VnETH0LWPEE=" name="csrf-token">
+	<title>角色数据权限</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+	
+    <link href="./zTreeStyle.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+<body class="white-bg">
+	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+		<form class="form-horizontal m" id="form-role-edit">
+			<input id="roleId" name="roleId" type="hidden" value="100">
+			<div class="form-group">
+				<label class="col-sm-3 control-label">角色名称：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleName" id="roleName" readonly="true" value="user1">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">权限字符：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleKey" id="roleKey" readonly="true" value="fedw">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">数据范围：</label>
+				<div class="col-sm-8">
+					<select id="dataScope" name="dataScope" class="form-control m-b">
+						<option value="1" selected="selected">全部数据权限</option>
+						<option value="2">自定义数据权限</option>
+						<option value="3">本部门数据权限</option>
+						<option value="4">本部门及以下数据权限</option>
+						<option value="5">仅本人数据权限</option>
+					</select>
+					<span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 特殊情况下，设置为“自定数据权限”</span>
+				</div>
+			</div>
+			<div class="form-group" id="authDataScope" style="display:none">
+				<label class="col-sm-3 control-label">数据权限：</label>
+				<div class="col-sm-8">
+				    <label class="check-box">
+				        <div class="icheckbox-blue checked"><input type="checkbox" value="1" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>展开/折叠</label>
+				    <label class="check-box">
+				        <div class="icheckbox-blue"><input type="checkbox" value="2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>全选/全不选</label>
+				    <label class="check-box">
+				        <div class="icheckbox-blue checked"><input type="checkbox" value="3" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>父子联动</label>
+				    <div id="deptTrees" class="ztree ztree-border"><li id="deptTrees_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span><span id="deptTrees_1_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="若依科技"><span id="deptTrees_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="deptTrees_1_span">若依科技</span></a><ul id="deptTrees_1_ul" class="level0 " style=""><li id="deptTrees_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_2_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><span id="deptTrees_2_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="深圳总公司"><span id="deptTrees_2_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="deptTrees_2_span">深圳总公司</span></a><ul id="deptTrees_2_ul" class="level1 line" style=""><li id="deptTrees_3" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_3_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="deptTrees_3_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_3_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="研发部门"><span id="deptTrees_3_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_3_span">研发部门</span></a></li><li id="deptTrees_4" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_4_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="deptTrees_4_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_4_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="市场部门"><span id="deptTrees_4_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_4_span">市场部门</span></a></li><li id="deptTrees_5" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_5_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="deptTrees_5_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_5_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="测试部门"><span id="deptTrees_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_5_span">测试部门</span></a></li><li id="deptTrees_6" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_6_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="deptTrees_6_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_6_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="财务部门"><span id="deptTrees_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_6_span">财务部门</span></a></li><li id="deptTrees_7" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_7_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><span id="deptTrees_7_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_7_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="运维部门"><span id="deptTrees_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_7_span">运维部门</span></a></li></ul></li><li id="deptTrees_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_8_switch" title="" class="button level1 switch bottom_open" treenode_switch=""></span><span id="deptTrees_8_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="长沙分公司"><span id="deptTrees_8_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="deptTrees_8_span">长沙分公司</span></a><ul id="deptTrees_8_ul" class="level1 " style=""><li id="deptTrees_9" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_9_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="deptTrees_9_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_9_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="市场部门"><span id="deptTrees_9_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_9_span">市场部门</span></a></li><li id="deptTrees_10" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="deptTrees_10_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><span id="deptTrees_10_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="deptTrees_10_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="财务部门"><span id="deptTrees_10_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="deptTrees_10_span">财务部门</span></a></li></ul></li></ul></li></div>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	
+    <script src="./jquery.ztree.all-3.5.js.下载"></script>
+
+	<script type="text/javascript">
+	
+	    $(function() {
+			var url = ctx + "system/role/deptTreeData?roleId=" + $("#roleId").val();
+			var options = {
+				id: "deptTrees",
+		        url: url,
+		        check: { enable: true, nocheckInherit: true, chkboxType: { "Y": "ps", "N": "ps" } },
+		        expandLevel: 2
+		    };
+			$.tree.init(options);
+	    });
+	    
+	    $('input').on('ifChanged', function(obj){
+			var type = $(this).val();
+			var checked = obj.currentTarget.checked;
+			if (type == 1) {
+			    if (checked) {
+			        $._tree.expandAll(true);
+			    } else {
+			        $._tree.expandAll(false);
+			    }
+			} else if (type == "2") {
+			    if (checked) {
+			        $._tree.checkAllNodes(true);
+			    } else {
+			        $._tree.checkAllNodes(false);
+			    }
+			} else if (type == "3") {
+			    if (checked) {
+			        $._tree.setting.check.chkboxType = { "Y": "ps", "N": "ps" };
+			    } else {
+			        $._tree.setting.check.chkboxType = { "Y": "", "N": "" };
+			    }
+			}
+		})
+
+		function submitHandler() {
+	        if ($.validate.form()) {
+	        	edit();
+	        }
+	    }
+		
+		function edit() {
+			var roleId = $("input[name='roleId']").val();
+			var roleName = $("input[name='roleName']").val();
+			var roleKey = $("input[name='roleKey']").val();
+			var dataScope = $("#dataScope").val();
+            var deptIds = $.tree.getCheckedNodes();
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : ctx + "system/role/authDataScope",
+				data : {
+					"roleId": roleId,
+					"roleName": roleName,
+					"roleKey": roleKey,
+					"dataScope": dataScope,
+			        "deptIds": deptIds
+				},
+				async : false,
+				error : function(request) {
+					$.modal.alertError("系统错误");
+				},
+				success : function(data) {
+					$.operate.successCallback(data);
+				}
+			});
+		}
+		
+		$("#dataScope").change(function(event){
+        	var dataScope = $(event.target).val();
+        	dataScopeVisible(dataScope);
+        });
+		
+		function dataScopeVisible(dataScope) {
+			if (dataScope == 2) {
+	    		$("#authDataScope").show();
+	    	} else {
+	    		$._tree.checkAllNodes(false);
+	    		$("#authDataScope").hide();
+	    	}
+		}
+	</script>
+
+
+</body></html>

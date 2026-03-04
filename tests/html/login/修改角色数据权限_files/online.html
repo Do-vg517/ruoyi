@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost/monitor/online -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="kyA1CEV7Jh1kY+2xzblX7SCuHs3kazu8VnETH0LWPEE=" name="csrf-token">
+	<title>在线用户列表</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+<body class="gray-bg">
+    <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+				<form id="online-form">
+					<div class="select-list">
+						<ul>
+							<li>
+								登录地址：<input type="text" name="ipaddr">
+							</li>
+							<li>
+								登录名称：<input type="text" name="loginName">
+							</li>
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+			
+	        
+	        
+	        <div class="col-sm-12 select-table table-striped">
+			    <div class="bootstrap-table bootstrap3">
+      <div class="fixed-table-toolbar"><div class="bs-bars pull-left"><div class="btn-group-sm" id="toolbar" role="group">
+	            <a class="btn btn-danger multiple disabled" onclick="javascript:batchForceLogout()">
+	                <i class="fa fa-sign-out"></i> 强退
+	            </a>
+	        </div></div><div class="columns columns-right btn-group pull-right"><button class="btn btn-default btn-outline" type="button" name="search" aria-label="隐藏/显示搜索" title="隐藏/显示搜索"><i class="glyphicon glyphicon-search"></i> </button><button class="btn btn-default btn-outline" type="button" name="refresh" aria-label="刷新" title="刷新"><i class="glyphicon glyphicon-refresh icon-refresh"></i> </button><button class="btn btn-default btn-outline" type="button" name="toggle" aria-label="显示卡片视图" title="显示卡片视图"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i> </button><div class="keep-open btn-group">
+            <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown" aria-label="列" title="列">
+            <i class="glyphicon glyphicon-th icon-th"></i>
+            
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu"><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="1" value="1" checked="checked"> <span>序号</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="sessionId" value="2" checked="checked"> <span>会话编号</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="loginName" value="3" checked="checked"> <span>登录名称</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="deptName" value="4" checked="checked"> <span>部门名称</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="ipaddr" value="5" checked="checked"> <span>主机</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="loginLocation" value="6" checked="checked"> <span>登录地点</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="browser" value="7" checked="checked"> <span>浏览器</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="os" value="8" checked="checked"> <span>操作系统</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="status" value="9" checked="checked"> <span>会话状态</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="startTimestamp" value="10" checked="checked"> <span>登录时间</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="lastAccessTime" value="11" checked="checked"> <span>最后访问时间</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="12" value="12" checked="checked"> <span>操作</span></label></li></ul></div>
+                <div class="export btn-group">
+                <button class="btn btn-default btn-outline dropdown-toggle" aria-label="Export data" data-toggle="dropdown" type="button" title="Export data">
+                <i class="glyphicon glyphicon-export icon-share"></i>
+                
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+              <li role="menuitem" class="" data-type="csv"><a href="http://localhost/monitor/online#">CSV</a></li><li role="menuitem" class="" data-type="txt"><a href="http://localhost/monitor/online#">TXT</a></li><li role="menuitem" class="" data-type="doc"><a href="http://localhost/monitor/online#">MS-Word</a></li><li role="menuitem" class="" data-type="excel"><a href="http://localhost/monitor/online#">MS-Excel</a></li></ul></div></div></div>
+      
+      <div class="fixed-table-container" style="padding-bottom: 0px;">
+      <div class="fixed-table-header" style="display: none;"><table></table></div>
+      <div class="fixed-table-body">
+      <div class="fixed-table-loading table table-bordered table-hover" style="top: 35.0625px;">
+      <span class="loading-wrap">
+    <span class="loading-text" style="font-size: 13px;">正在努力地加载数据中，请稍候</span>
+    <span class="animation-wrap"><span class="animation-dot"></span></span>
+    </span>
+  
+      </div>
+      <table id="bootstrap-table" class="table table-bordered table-hover"><thead class=""><tr><th class="bs-checkbox " style="width: 36px; " data-field="0"><div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div><div class="fht-cell"></div></th><th data-field="1"><div class="th-inner ">序号</div><div class="fht-cell"></div></th><th data-field="sessionId"><div class="th-inner ">会话编号</div><div class="fht-cell"></div></th><th data-field="loginName"><div class="th-inner sortable both">登录名称</div><div class="fht-cell"></div></th><th data-field="deptName"><div class="th-inner ">部门名称</div><div class="fht-cell"></div></th><th data-field="ipaddr"><div class="th-inner ">主机</div><div class="fht-cell"></div></th><th data-field="loginLocation"><div class="th-inner ">登录地点</div><div class="fht-cell"></div></th><th data-field="browser"><div class="th-inner ">浏览器</div><div class="fht-cell"></div></th><th data-field="os"><div class="th-inner ">操作系统</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="status"><div class="th-inner ">会话状态</div><div class="fht-cell"></div></th><th data-field="startTimestamp"><div class="th-inner sortable both">登录时间</div><div class="fht-cell"></div></th><th data-field="lastAccessTime"><div class="th-inner sortable both desc">最后访问时间</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="12"><div class="th-inner ">操作</div><div class="fht-cell"></div></th></tr></thead><tbody><tr data-index="0" data-uniqueid="119ad8b9-d0e7-4a4d-9471-0b40b9a88040"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="0" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">1</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="119ad8b9-d0e7-4a4d-9471-0b40b9a88040"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="119ad8b9-d0e7-4a4d-9471-0b40b9a88040">119ad8b9-d0e7-4a4d-9...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:10:05</td><td class="">2026-03-03 16:06:03</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;119ad8b9-d0e7-4a4d-9471-0b40b9a88040&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="1" data-uniqueid="b25e3a79-d84c-4ba6-ab98-27c973d21ec5"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="1" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">2</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="b25e3a79-d84c-4ba6-ab98-27c973d21ec5"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="b25e3a79-d84c-4ba6-ab98-27c973d21ec5">b25e3a79-d84c-4ba6-a...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 16:01:45</td><td class="">2026-03-03 16:01:46</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;b25e3a79-d84c-4ba6-ab98-27c973d21ec5&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="2" data-uniqueid="c68b4a77-6aec-47ac-9110-d40bf730d800"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="2" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">3</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="c68b4a77-6aec-47ac-9110-d40bf730d800"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="c68b4a77-6aec-47ac-9110-d40bf730d800">c68b4a77-6aec-47ac-9...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 16:01:26</td><td class="">2026-03-03 16:01:26</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;c68b4a77-6aec-47ac-9110-d40bf730d800&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="3" data-uniqueid="472d8b9e-20b6-4721-a579-35c48171d0d9"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="3" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">4</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="472d8b9e-20b6-4721-a579-35c48171d0d9"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="472d8b9e-20b6-4721-a579-35c48171d0d9">472d8b9e-20b6-4721-a...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 16:01:09</td><td class="">2026-03-03 16:01:09</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;472d8b9e-20b6-4721-a579-35c48171d0d9&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="4" data-uniqueid="784e0ddd-7e54-4b6d-852a-3c2e877d4ca4"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="4" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">5</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="784e0ddd-7e54-4b6d-852a-3c2e877d4ca4"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="784e0ddd-7e54-4b6d-852a-3c2e877d4ca4">784e0ddd-7e54-4b6d-8...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:57:46</td><td class="">2026-03-03 15:57:46</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;784e0ddd-7e54-4b6d-852a-3c2e877d4ca4&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="5" data-uniqueid="b2fc5357-f175-46a2-999e-48d5f05ef951"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="5" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">6</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="b2fc5357-f175-46a2-999e-48d5f05ef951"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="b2fc5357-f175-46a2-999e-48d5f05ef951">b2fc5357-f175-46a2-9...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:57:23</td><td class="">2026-03-03 15:57:24</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;b2fc5357-f175-46a2-999e-48d5f05ef951&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="6" data-uniqueid="712b07fa-8c60-4e4d-a69e-22a66221f0c9"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="6" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">7</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="712b07fa-8c60-4e4d-a69e-22a66221f0c9"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="712b07fa-8c60-4e4d-a69e-22a66221f0c9">712b07fa-8c60-4e4d-a...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:57:07</td><td class="">2026-03-03 15:57:07</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;712b07fa-8c60-4e4d-a69e-22a66221f0c9&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="7" data-uniqueid="6af788a2-ccae-4421-b30a-b5883f06400d"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="7" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">8</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="6af788a2-ccae-4421-b30a-b5883f06400d"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="6af788a2-ccae-4421-b30a-b5883f06400d">6af788a2-ccae-4421-b...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:53:49</td><td class="">2026-03-03 15:53:49</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;6af788a2-ccae-4421-b30a-b5883f06400d&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="8" data-uniqueid="9e6a23e7-0760-4ef1-8077-ef9701e66b67"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="8" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">9</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="9e6a23e7-0760-4ef1-8077-ef9701e66b67"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="9e6a23e7-0760-4ef1-8077-ef9701e66b67">9e6a23e7-0760-4ef1-8...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:53:28</td><td class="">2026-03-03 15:53:28</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;9e6a23e7-0760-4ef1-8077-ef9701e66b67&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr><tr data-index="9" data-uniqueid="4f356ac8-d165-47cf-a36a-f5b1a793370c"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="9" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">10</td><td class=""><input style="opacity: 0;position: absolute;z-index:-1" type="text" value="4f356ac8-d165-47cf-a36a-f5b1a793370c"><a href="http://localhost/monitor/online###" class="tooltip-show" data-toggle="tooltip" data-target="copy" title="" data-original-title="4f356ac8-d165-47cf-a36a-f5b1a793370c">4f356ac8-d165-47cf-a...</a></td><td class="">admin</td><td class="">研发部门</td><td class="">127.0.0.1</td><td class="">内网IP</td><td class="">Chrome 145</td><td class="">Windows10</td><td class="" style="text-align: center;"><span class="badge badge-primary">在线</span></td><td class="">2026-03-03 15:53:10</td><td class="">2026-03-03 15:53:11</td><td class="" style="text-align: center;"><a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="forceLogout(&#39;4f356ac8-d165-47cf-a36a-f5b1a793370c&#39;)"><i class="fa fa-sign-out"></i>强退</a> </td></tr></tbody></table></div>
+      <div class="fixed-table-footer"></div>
+      </div>
+      <div class="fixed-table-pagination" style=""><div class="pull-left pagination-detail"><span class="pagination-info">
+      显示第 1 到第 10 条记录，总共 13 条记录
+      </span><div class="page-list">每页显示 <div class="btn-group dropdown dropup">
+        <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="page-size">
+        10
+        </span>
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"><li role="menuitem" class="active"><a href="http://localhost/monitor/online#">10</a></li><li role="menuitem" class=""><a href="http://localhost/monitor/online#">25</a></li></ul></div> 条记录</div></div><div class="pull-right pagination"><ul class="pagination pagination-outline"><li class="page-item page-pre disabled"><a class="page-link" aria-label="上一页" href="javascript:void(0)">‹</a></li><li class="page-item active"><a class="page-link" aria-label="第1页" href="javascript:void(0)">1</a></li><li class="page-item"><a class="page-link" aria-label="第2页" href="javascript:void(0)">2</a></li><li class="page-item page-next"><a class="page-link" aria-label="下一页" href="javascript:void(0)">›</a></li></ul></div></div>
+      </div><div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	
+	<script src="./bootstrap-table-export.js.下载"></script>
+	<script src="./tableExport.min.js.下载"></script>
+
+	<script>
+		var forceFlag = "";
+		var prefix = ctx + "monitor/online";
+
+		$(function() {
+		    var options = {
+		    	uniqueId: "sessionId",
+		        url: prefix + "/list",
+		        exportUrl: prefix + "/export",
+		        sortName: "lastAccessTime",
+		        sortOrder: "desc",
+		        showExport: true,
+		        escape: true,
+		        columns: [{
+		            checkbox: true
+		        },
+		        {
+                    title: "序号",
+                    formatter: function (value, row, index) {
+                 	    return $.table.serialNumber(index);
+                    }
+                },
+		        {
+		            field: 'sessionId',
+		            title: '会话编号',
+		            formatter: function(value, row, index) {
+                    	return $.table.tooltip(value);
+                    }
+		        },
+		        {
+		            field: 'loginName',
+		            title: '登录名称',
+		            sortable: true
+		        },
+		        {
+		            field: 'deptName',
+		            title: '部门名称'
+		        },
+		        {
+		            field: 'ipaddr',
+		            title: '主机'
+		        },
+		        {
+		            field: 'loginLocation',
+		            title: '登录地点'
+		        },
+		        {
+		            field: 'browser',
+		            title: '浏览器'
+		        },
+		        {
+		            field: 'os',
+		            title: '操作系统'
+		        },
+		        {
+		            field: 'status',
+		            title: '会话状态',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		                if (value == 'on_line') {
+		                    return '<span class="badge badge-primary">在线</span>';
+		                } else if (value == 'off_line') {
+		                    return '<span class="badge badge-danger">离线</span>';
+		                }
+		            }
+		        },
+		        {
+		            field: 'startTimestamp',
+		            title: '登录时间',
+		            sortable: true
+		        },
+		        {
+		            field: 'lastAccessTime',
+		            title: '最后访问时间',
+		            sortable: true
+		        },
+		        {
+		            title: '操作',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		                var msg = '<a class="btn btn-danger btn-xs ' + forceFlag + '" href="javascript:void(0)" onclick="forceLogout(\'' + row.sessionId + '\')"><i class="fa fa-sign-out"></i>强退</a> ';
+		                return msg;
+		            }
+		        }]
+		    };
+		    $.table.init(options);
+		});
+
+		// 单条强退
+		function forceLogout(sessionId) {
+		    $.modal.confirm("确定要强制选中用户下线吗？", function() {
+		    	var data = { "ids": sessionId };
+		        $.operate.post(prefix + "/batchForceLogout", data);
+		    })
+		}
+
+		// 批量强退
+		function batchForceLogout() {
+		    var rows = $.table.selectColumns("sessionId");
+		    if (rows.length == 0) {
+		        $.modal.alertWarning("请选择要强退的用户");
+		        return;
+		    }
+		    $.modal.confirm("确认要强退选中的" + rows.length + "条数据吗?", function() {
+		        var url = prefix + "/batchForceLogout";
+		        var data = { "ids": rows.join() };
+		        $.operate.post(url, data);
+		    });
+		}
+	</script>
+
+</body></html>

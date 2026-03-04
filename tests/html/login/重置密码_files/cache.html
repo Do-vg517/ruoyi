@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost/monitor/cache -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="kyA1CEV7Jh1kY+2xzblX7SCuHs3kazu8VnETH0LWPEE=" name="csrf-token">
+	<title>缓存监控</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <input type="hidden" id="cacheName">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5><i class="fa fa-bars"></i> 缓存列表</h5>
+                            <div class="ibox-tools">
+                                <a href="javascript:getCacheNames()"><i class="fa fa-refresh"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-hover no-margins">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>缓存名称</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cacheNames">
+                                    <tr>
+                                        <td>1</td>
+                                        <td style="word-wrap:break-word;word-break:break-all;" onclick="getCacheKeys(&quot;loginRecordCache&quot;)">loginRecordCache</td>
+                                        <td style="width: 50px"><a href="javascript:;" onclick="clearCacheName(&quot;loginRecordCache&quot;)" title="清空"><i class="fa fa-trash-o text-danger"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td style="word-wrap:break-word;word-break:break-all;" onclick="getCacheKeys(&quot;sys-cache&quot;)">sys-cache</td>
+                                        <td style="width: 50px"><a href="javascript:;" onclick="clearCacheName(&quot;sys-cache&quot;)" title="清空"><i class="fa fa-trash-o text-danger"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td style="word-wrap:break-word;word-break:break-all;" onclick="getCacheKeys(&quot;shiro-activeSessionCache&quot;)">shiro-activeSessionCache</td>
+                                        <td style="width: 50px"><a href="javascript:;" onclick="clearCacheName(&quot;shiro-activeSessionCache&quot;)" title="清空"><i class="fa fa-trash-o text-danger"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td style="word-wrap:break-word;word-break:break-all;" onclick="getCacheKeys(&quot;sys-userCache&quot;)">sys-userCache</td>
+                                        <td style="width: 50px"><a href="javascript:;" onclick="clearCacheName(&quot;sys-userCache&quot;)" title="清空"><i class="fa fa-trash-o text-danger"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td style="word-wrap:break-word;word-break:break-all;" onclick="getCacheKeys(&quot;sys-config&quot;)">sys-config</td>
+                                        <td style="width: 50px"><a href="javascript:;" onclick="clearCacheName(&quot;sys-config&quot;)" title="清空"><i class="fa fa-trash-o text-danger"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td style="word-wrap:break-word;word-break:break-all;" onclick="getCacheKeys(&quot;sys-dict&quot;)">sys-dict</td>
+                                        <td style="width: 50px"><a href="javascript:;" onclick="clearCacheName(&quot;sys-dict&quot;)" title="清空"><i class="fa fa-trash-o text-danger"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5><i class="fa fa-key"></i> 键名列表</h5>
+                            <div class="ibox-tools">
+                                <a href="javascript:getCacheKeys(&#39;&#39;, true)"><i class="fa fa-refresh"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-hover no-margins">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>缓存键名</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cacheKeys">
+                                    
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5><i class="fa fa-file-text"></i> 缓存内容</h5>
+                            <div class="ibox-tools">
+                                <a href="javascript:clearAll()"><i class="fa fa-refresh"></i> 清理全部</a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+	                        <div class="row" id="cacheValue">
+	                            <div class="col-sm-12">
+	                                <div class="form-group">
+	                                    <label>缓存名称：</label>
+	                                    <input type="text" class="form-control" value="">
+	                                </div>
+	                                <div class="form-group">
+	                                    <label>缓存键名：</label>
+	                                    <input type="text" class="form-control" value="">
+	                                </div>
+	                                <div class="form-group">
+	                                    <label>缓存内容：</label>
+	                                    <textarea class="form-control" style="height: 100px"></textarea>
+	                                </div>
+	                            </div>
+	                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+<script>
+var prefix = ctx + "monitor/cache";
+
+function getCacheNames() {
+    $.ajax({
+        type: "post",
+        url: prefix + "/getNames",
+        success: function(data) {
+            $("#cacheNames").html(data);
+            $.modal.msgSuccess("刷新缓存列表成功");
+        }
+    });
+}
+
+function getCacheKeys(cacheName, isMsg) {
+	var _cacheName = $.common.isNotEmpty(cacheName) ? cacheName : $("#cacheName").val();
+    $.ajax({
+        type: "post",
+        url: prefix + "/getKeys",
+        data: {
+            "cacheName": _cacheName
+        },
+        success: function(data) {
+            $("#cacheKeys").html(data);
+            $("#cacheName").val(_cacheName);
+            if (isMsg) {
+                $.modal.msgSuccess("刷新键名列表成功");
+            }
+        }
+    });
+}
+
+function getCacheValue(cacheName, cacheKey) {
+    $.ajax({
+        type: "post",
+        url: prefix + "/getValue",
+        data: {
+            "cacheName": cacheName,
+            "cacheKey": cacheKey
+        },
+        success: function(data) {
+            $("#cacheValue").html(data);
+        }
+    });
+}
+
+function clearCacheName(cacheName){
+	$.post(prefix + "/clearCacheName", {cacheName: cacheName}, function(result) {
+		if (result.code == web_status.SUCCESS) {
+			$.modal.msgSuccess("清理缓存[" + cacheName + "]成功")
+			getCacheKeys(cacheName);
+        } else {
+            $.modal.msgError(result.msg);
+        }
+	});
+}
+
+function clearCacheKey(cacheName, cacheKey) {
+	$.post(prefix + "/clearCacheKey", {cacheName: cacheName, cacheKey: cacheKey}, function(result) {
+		if (result.code == web_status.SUCCESS) {
+			$.modal.msgSuccess("清理缓存[" + cacheKey + "]成功")
+			getCacheKeys(cacheName);
+        } else {
+            $.modal.msgError(result.msg);
+        }
+	});
+}
+
+function clearAll(){
+	$.get(prefix + "/clearAll", function(result) {
+		if (result.code == web_status.SUCCESS) {
+			$.modal.msgSuccess("清理全部缓存成功")
+        } else {
+            $.modal.msgError(result.msg);
+        }
+	});
+}
+</script>
+
+</body></html>

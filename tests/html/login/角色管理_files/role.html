@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost/system/role -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="im3mmFy7vaUETiBup/q9ADQH1jlAfb6ssiPxgJcI3/4=" name="csrf-token">
+	<title>角色列表</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"><link href="./laydate.css" rel="stylesheet" id="layuicss-laydate" media="all"></head>
+<body class="gray-bg">
+	<div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+				<form id="role-form">
+					<div class="select-list">
+						<ul>
+							<li>
+								角色名称：<input type="text" name="roleName">
+							</li>
+							<li>
+								权限字符：<input type="text" name="roleKey">
+							</li>
+							<li>
+								角色状态：<select name="status">
+									<option value="">所有</option>
+									<option value="0">正常</option>
+									<option value="1">停用</option>
+								</select>
+							</li>
+							<li class="select-time">
+								<label>创建时间： </label>
+								<input type="text" class="time-input" id="startTime" placeholder="开始时间" name="params[beginTime]" lay-key="3" layui-laydate-id="startTime">
+								<span>-</span>
+								<input type="text" class="time-input" id="endTime" placeholder="结束时间" name="params[endTime]" lay-key="4" layui-laydate-id="endTime">
+							</li>
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+							    <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+		
+			
+	        
+	        <div class="col-sm-12 select-table table-striped">
+			    <div class="bootstrap-table bootstrap3">
+      <div class="fixed-table-toolbar"><div class="bs-bars pull-left"><div class="btn-group-sm" id="toolbar" role="group">
+				<a class="btn btn-success" onclick="$.operate.add()">
+	                <i class="fa fa-plus"></i> 新增
+	            </a>
+	            <a class="btn btn-primary single disabled" onclick="$.operate.edit()">
+		            <i class="fa fa-edit"></i> 修改
+		        </a>
+				<a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
+		            <i class="fa fa-remove"></i> 删除
+		        </a>
+		        <a class="btn btn-warning" onclick="$.table.exportExcel()">
+		            <i class="fa fa-download"></i> 导出
+		        </a>
+	        </div></div><div class="columns columns-right btn-group pull-right"><button class="btn btn-default btn-outline" type="button" name="search" aria-label="隐藏/显示搜索" title="隐藏/显示搜索"><i class="glyphicon glyphicon-search"></i> </button><button class="btn btn-default btn-outline" type="button" name="refresh" aria-label="刷新" title="刷新"><i class="glyphicon glyphicon-refresh icon-refresh"></i> </button><button class="btn btn-default btn-outline" type="button" name="toggle" aria-label="显示卡片视图" title="显示卡片视图"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i> </button><div class="keep-open btn-group">
+            <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown" aria-label="列" title="列">
+            <i class="glyphicon glyphicon-th icon-th"></i>
+            
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu"><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="roleId" value="1" checked="checked"> <span>角色编号</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="roleName" value="2" checked="checked"> <span>角色名称</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="roleKey" value="3" checked="checked"> <span>权限字符</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="dataScope" value="4" checked="checked"> <span>数据权限</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="roleSort" value="5" checked="checked"> <span>显示顺序</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="6" value="6" checked="checked"> <span>角色状态</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="createTime" value="7" checked="checked"> <span>创建时间</span></label></li><li class="dropdown-item-marker" role="menuitem"><label><input type="checkbox" data-field="8" value="8" checked="checked"> <span>操作</span></label></li></ul></div></div></div>
+      
+      <div class="fixed-table-container" style="padding-bottom: 0px;">
+      <div class="fixed-table-header" style="display: none;"><table></table></div>
+      <div class="fixed-table-body">
+      <div class="fixed-table-loading table table-bordered table-hover" style="top: 35.0625px;">
+      <span class="loading-wrap">
+    <span class="loading-text" style="font-size: 13px;">正在努力地加载数据中，请稍候</span>
+    <span class="animation-wrap"><span class="animation-dot"></span></span>
+    </span>
+  
+      </div>
+      <table id="bootstrap-table" class="table table-bordered table-hover"><thead class=""><tr><th class="bs-checkbox " style="width: 36px; " data-field="0"><div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div><div class="fht-cell"></div></th><th data-field="roleId"><div class="th-inner ">角色编号</div><div class="fht-cell"></div></th><th data-field="roleName"><div class="th-inner sortable both">角色名称</div><div class="fht-cell"></div></th><th data-field="roleKey"><div class="th-inner sortable both">权限字符</div><div class="fht-cell"></div></th><th data-field="dataScope"><div class="th-inner ">数据权限</div><div class="fht-cell"></div></th><th data-field="roleSort"><div class="th-inner sortable both asc">显示顺序</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="6"><div class="th-inner ">角色状态</div><div class="fht-cell"></div></th><th data-field="createTime"><div class="th-inner sortable both">创建时间</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="8"><div class="th-inner ">操作</div><div class="fht-cell"></div></th></tr></thead><tbody><tr data-index="0"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="0" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">1</td><td class="">超级管理员</td><td class="">admin</td><td class=""><span class="badge badge-primary">全部数据权限</span></td><td class="">1</td><td class="" style="text-align: center;"><i class="fa fa-toggle-on text-info fa-2x" onclick="disable(&#39;1&#39;)"></i> </td><td class="">2026-03-02 15:44:42</td><td class="" style="text-align: center;"></td></tr><tr data-index="1"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="1" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">2</td><td class="">普通角色</td><td class="">common</td><td class=""><span class="badge badge-success">自定义数据权限</span></td><td class="">2</td><td class="" style="text-align: center;"><i class="fa fa-toggle-on text-info fa-2x" onclick="disable(&#39;2&#39;)"></i> </td><td class="">2026-03-02 15:44:42</td><td class="" style="text-align: center;"><a class="btn btn-success btn-xs " href="javascript:void(0)" onclick="$.operate.edit(&#39;2&#39;)"><i class="fa fa-edit"></i>编辑</a> <a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="$.operate.remove(&#39;2&#39;)"><i class="fa fa-remove"></i>删除</a> <a tabindex="0" class="btn btn-info btn-xs" role="button" data-container="body" data-placement="left" data-toggle="popover" data-html="true" data-trigger="hover" data-content="&lt;a class=&#39;btn btn-default btn-xs &#39; href=&#39;javascript:void(0)&#39; onclick=&#39;authDataScope(2)&#39;&gt;&lt;i class=&#39;fa fa-check-square-o&#39;&gt;&lt;/i&gt;数据权限&lt;/a&gt; &lt;a class=&#39;btn btn-default btn-xs &#39; href=&#39;javascript:void(0)&#39; onclick=&#39;authUser(2)&#39;&gt;&lt;i class=&#39;fa fa-user&#39;&gt;&lt;/i&gt;分配用户&lt;/a&gt;" data-original-title="" title=""><i class="fa fa-chevron-circle-right"></i>更多操作</a></td></tr><tr data-index="2"><td class="bs-checkbox" style="width: 36px;"><label><input data-index="2" name="btSelectItem" type="checkbox"><span></span></label></td><td class="">100</td><td class="">user1</td><td class="">fedw</td><td class=""><span class="badge badge-primary">全部数据权限</span></td><td class="">3</td><td class="" style="text-align: center;"><i class="fa fa-toggle-on text-info fa-2x" onclick="disable(&#39;100&#39;)"></i> </td><td class="">2026-03-02 15:58:02</td><td class="" style="text-align: center;"><a class="btn btn-success btn-xs " href="javascript:void(0)" onclick="$.operate.edit(&#39;100&#39;)"><i class="fa fa-edit"></i>编辑</a> <a class="btn btn-danger btn-xs " href="javascript:void(0)" onclick="$.operate.remove(&#39;100&#39;)"><i class="fa fa-remove"></i>删除</a> <a tabindex="0" class="btn btn-info btn-xs" role="button" data-container="body" data-placement="left" data-toggle="popover" data-html="true" data-trigger="hover" data-content="&lt;a class=&#39;btn btn-default btn-xs &#39; href=&#39;javascript:void(0)&#39; onclick=&#39;authDataScope(100)&#39;&gt;&lt;i class=&#39;fa fa-check-square-o&#39;&gt;&lt;/i&gt;数据权限&lt;/a&gt; &lt;a class=&#39;btn btn-default btn-xs &#39; href=&#39;javascript:void(0)&#39; onclick=&#39;authUser(100)&#39;&gt;&lt;i class=&#39;fa fa-user&#39;&gt;&lt;/i&gt;分配用户&lt;/a&gt;" data-original-title="" title=""><i class="fa fa-chevron-circle-right"></i>更多操作</a></td></tr></tbody></table></div>
+      <div class="fixed-table-footer"></div>
+      </div>
+      <div class="fixed-table-pagination" style=""><div class="pull-left pagination-detail"><span class="pagination-info">
+      显示第 1 到第 3 条记录，总共 3 条记录
+      </span><div class="page-list" style="display: none;">每页显示 <div class="btn-group dropdown dropup">
+        <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="page-size">
+        10
+        </span>
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"><li role="menuitem" class="active"><a href="http://localhost/system/role#">10</a></li></ul></div> 条记录</div></div><div class="pull-right pagination" style="display: none;"><ul class="pagination pagination-outline"><li class="page-item page-pre disabled"><a class="page-link" aria-label="上一页" href="javascript:void(0)">‹</a></li><li class="page-item active"><a class="page-link" aria-label="第1页" href="javascript:void(0)">1</a></li><li class="page-item page-next disabled"><a class="page-link" aria-label="下一页" href="javascript:void(0)">›</a></li></ul></div></div>
+      </div><div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	<script>
+		var editFlag = "";
+		var removeFlag = "";
+		var prefix = ctx + "system/role";
+		
+
+		$(function() {
+		    var options = {
+		        url: prefix + "/list",
+		        createUrl: prefix + "/add",
+		        updateUrl: prefix + "/edit/{id}",
+		        removeUrl: prefix + "/remove",
+		        exportUrl: prefix + "/export",
+		        sortName: "roleSort",
+		        modalName: "角色",
+		        columns: [{
+		            checkbox: true
+		        },
+		        {
+		            field: 'roleId',
+		            title: '角色编号'
+		        },
+		        {
+		            field: 'roleName',
+		            title: '角色名称',
+		            sortable: true
+		        },
+		        {
+		            field: 'roleKey',
+		            title: '权限字符',
+		            sortable: true
+		        },
+		        {
+		            field: 'dataScope',
+		            title: '数据权限',
+		            formatter: function(value, item, index) {
+		                if (item.dataScope == '1') {
+		                    return '<span class="badge badge-primary">全部数据权限</span>';
+		                }
+		                else if (item.dataScope == '2') {
+		                    return '<span class="badge badge-success">自定义数据权限</span>';
+		                }
+		                else if (item.dataScope == '3') {
+		                    return '<span class="badge badge-info">本部门数据权限</span>';
+		                }
+		                else if (item.dataScope == '4') {
+		                    return '<span class="badge badge-warning">本部门及以下数据权限</span>';
+		                }
+		                else if (item.dataScope == '5') {
+		                    return '<span class="badge badge-danger">仅本人数据权限</span>';
+		                }
+		            }
+		        },
+		        {
+		            field: 'roleSort',
+		            title: '显示顺序',
+		            sortable: true
+		        },
+		        {
+		        	visible: editFlag == 'hidden' ? false : true,
+		        	title: '角色状态',
+		        	align: 'center',
+		        	formatter: function (value, row, index) {
+		        		return statusTools(row);
+		        	}
+		        },
+		        {
+		            field: 'createTime',
+		            title: '创建时间',
+		            sortable: true
+		        },
+		        {
+		            title: '操作',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		            	if (row.roleId != 1) {
+		                    var actions = [];
+		                    actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.roleId + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+		                    actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.roleId + '\')"><i class="fa fa-remove"></i>删除</a> ');
+		                    var more = [];
+		                    more.push("<a class='btn btn-default btn-xs " + editFlag + "' href='javascript:void(0)' onclick='authDataScope(" + row.roleId + ")'><i class='fa fa-check-square-o'></i>数据权限</a> ");
+		                    more.push("<a class='btn btn-default btn-xs " + editFlag + "' href='javascript:void(0)' onclick='authUser(" + row.roleId + ")'><i class='fa fa-user'></i>分配用户</a>");
+		                    actions.push('<a tabindex="0" class="btn btn-info btn-xs" role="button" data-container="body" data-placement="left" data-toggle="popover" data-html="true" data-trigger="hover" data-content="' + more.join('') + '"><i class="fa fa-chevron-circle-right"></i>更多操作</a>');
+		                    return actions.join('');
+		            	} else {
+		                    return "";
+		                }
+		            }
+		        }]
+		    };
+		    $.table.init(options);
+		});
+		
+		/* 角色管理-分配数据权限 */
+		function authDataScope(roleId) {
+		    var url = prefix + '/authDataScope/' + roleId;
+		    $.modal.open("分配数据权限", url);
+		}
+		
+		/* 角色管理-分配用户 */
+		function authUser(roleId) {
+		    var url = prefix + '/authUser/' + roleId;
+		    $.modal.openTab("分配用户", url);
+		}
+		
+		/* 角色状态显示 */
+		function statusTools(row) {
+		    if (row.status == 1) {
+    			return '<i class=\"fa fa-toggle-off text-info fa-2x\" onclick="enable(\'' + row.roleId + '\')"></i> ';
+    		} else {
+    			return '<i class=\"fa fa-toggle-on text-info fa-2x\" onclick="disable(\'' + row.roleId + '\')"></i> ';
+    		}
+		}
+		
+		/* 角色管理-停用 */
+		function disable(roleId) {
+			$.modal.confirm("确认要停用角色吗？", function() {
+				$.operate.post(prefix + "/changeStatus", { "roleId": roleId, "status": 1 });
+		    })
+		}
+
+		/* 角色管理启用 */
+		function enable(roleId) {
+			$.modal.confirm("确认要启用角色吗？", function() {
+				$.operate.post(prefix + "/changeStatus", { "roleId": roleId, "status": 0 });
+		    })
+		}
+	</script>
+
+</body></html>

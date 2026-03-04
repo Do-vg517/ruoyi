@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://localhost/system/user/selectDeptTree/100 -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="N91+Fe6bw1CqIMr+sK7PKnWMmGTqAFs0pOnBMe3W6aM=" name="csrf-token">
+	<title>部门树选择</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+	
+    <link href="./zTreeStyle.css" rel="stylesheet">
+
+<style>
+	body{height:auto;font-family: "Microsoft YaHei";}
+	button{font-family: "SimSun","Helvetica Neue",Helvetica,Arial;}
+</style><link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+
+<body class="hold-transition box box-main">
+	<input id="treeId" name="treeId" type="hidden" value="100">
+	<input id="treeName" name="treeName" type="hidden" value="若依科技">
+	<div class="wrapper"><div class="treeShowHideButton" onclick="$.tree.toggleSearch();">
+		<label id="btnShow" title="显示搜索" style="display:none;">︾</label>
+		<label id="btnHide" title="隐藏搜索">︽</label>
+	</div>
+	<div class="treeSearchInput" id="search">
+		<label for="keyword">关键字：</label><input type="text" class="empty" id="keyword" maxlength="50">
+		<button class="btn" id="btn" onclick="$.tree.searchNode()"> 搜索 </button>
+	</div>
+	<div class="treeExpandCollapse">
+		<a href="javascript:;" onclick="$.tree.expand()">展开</a> /
+		<a href="javascript:;" onclick="$.tree.collapse()">折叠</a>
+	</div>
+	<div id="tree" class="ztree treeselect"><li id="tree_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="tree_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span><a id="tree_1_a" class="level0 curSelectedNode" treenode_a="" onclick="" target="_blank" style="" title="若依科技"><span id="tree_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="tree_1_span">若依科技</span></a><ul id="tree_1_ul" class="level0 " style=""><li id="tree_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_2_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="tree_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="深圳总公司"><span id="tree_2_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="tree_2_span">深圳总公司</span></a><ul id="tree_2_ul" class="level1 line" style=""><li id="tree_3" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_3_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_3_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="研发部门"><span id="tree_3_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_3_span">研发部门</span></a></li><li id="tree_4" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_4_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_4_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="市场部门"><span id="tree_4_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_4_span">市场部门</span></a></li><li id="tree_5" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_5_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_5_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="测试部门"><span id="tree_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_5_span">测试部门</span></a></li><li id="tree_6" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_6_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_6_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="财务部门"><span id="tree_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_6_span">财务部门</span></a></li><li id="tree_7" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_7_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_7_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="运维部门"><span id="tree_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_7_span">运维部门</span></a></li></ul></li><li id="tree_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="tree_8_switch" title="" class="button level1 switch bottom_open" treenode_switch=""></span><a id="tree_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="长沙分公司"><span id="tree_8_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="tree_8_span">长沙分公司</span></a><ul id="tree_8_ul" class="level1 " style=""><li id="tree_9" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_9_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="tree_9_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="市场部门"><span id="tree_9_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_9_span">市场部门</span></a></li><li id="tree_10" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="tree_10_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><a id="tree_10_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="财务部门"><span id="tree_10_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="tree_10_span">财务部门</span></a></li></ul></li></ul></li></div>
+	</div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	
+    <script src="./jquery.ztree.all-3.5.js.下载"></script>
+
+	<script>
+	    var prefix = ctx + "system/user"
+	    var deptId = 100;
+		$(function() {
+			var url = prefix + "/deptTreeData";
+			var options = {
+		        url: url,
+		        expandLevel: 2,
+		        onClick : zOnClick
+		    };
+			$.tree.init(options);
+		});
+		
+		function zOnClick(event, treeId, treeNode) {
+		    var treeId = treeNode.id;
+		    var treeName = treeNode.name;
+		    $("#treeId").val(treeId);
+		    $("#treeName").val(treeName);
+		}
+	</script>
+
+
+</body></html>

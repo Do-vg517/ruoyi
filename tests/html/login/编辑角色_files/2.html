@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost/system/role/edit/2 -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="aqWM3k+dWhmM3IroMpW8dY+gSbgxGzbdDsJgiNov2Tk=" name="csrf-token">
+	<title>修改角色</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+	
+    <link href="./zTreeStyle.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+<body class="white-bg">
+	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+		<form class="form-horizontal m" id="form-role-edit" novalidate="novalidate">
+			<input id="roleId" name="roleId" type="hidden" value="2">
+			<div class="form-group">
+				<label class="col-sm-3 control-label is-required">角色名称：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleName" id="roleName" required="" value="普通角色">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label is-required">权限字符：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleKey" id="roleKey" required="" value="common">
+					<span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 控制器中定义的权限字符，如：@RequiresRoles("")</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label is-required">显示顺序：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleSort" id="roleSort" required="" value="2">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">状态：</label>
+				<div class="col-sm-8">
+					<label class="toggle-switch switch-solid">
+                        <input type="checkbox" id="status" checked="checked">
+                        <span></span>
+                    </label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">备注：</label>
+				<div class="col-sm-8">
+					<input id="remark" name="remark" class="form-control" type="text" value="普通角色">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">菜单权限：</label>
+				<div class="col-sm-8">
+				    <label class="check-box">
+				        <div class="icheckbox-blue"><input type="checkbox" value="1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>展开/折叠</label>
+				    <label class="check-box">
+				        <div class="icheckbox-blue"><input type="checkbox" value="2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>全选/全不选</label>
+				    <label class="check-box">
+				        <div class="icheckbox-blue checked"><input type="checkbox" value="3" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>父子联动</label>
+				    <div id="menuTrees" class="ztree ztree-border"><li id="menuTrees_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="menuTrees_1_switch" title="" class="button level0 switch roots_close" treenode_switch=""></span><span id="menuTrees_1_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="menuTrees_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="系统管理"><span id="menuTrees_1_ico" title="" treenode_ico="" class="button ico_close" style=""></span><span id="menuTrees_1_span">系统管理<font color="#888">&nbsp;&nbsp;&nbsp;</font></span></a></li><li id="menuTrees_60" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="menuTrees_60_switch" title="" class="button level0 switch center_close" treenode_switch=""></span><span id="menuTrees_60_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="menuTrees_60_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="系统监控"><span id="menuTrees_60_ico" title="" treenode_ico="" class="button ico_close" style=""></span><span id="menuTrees_60_span">系统监控<font color="#888">&nbsp;&nbsp;&nbsp;</font></span></a></li><li id="menuTrees_76" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="menuTrees_76_switch" title="" class="button level0 switch center_close" treenode_switch=""></span><span id="menuTrees_76_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="menuTrees_76_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="系统工具"><span id="menuTrees_76_ico" title="" treenode_ico="" class="button ico_close" style=""></span><span id="menuTrees_76_span">系统工具<font color="#888">&nbsp;&nbsp;&nbsp;</font></span></a></li><li id="menuTrees_85" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="menuTrees_85_switch" title="" class="button level0 switch bottom_docu" treenode_switch=""></span><span id="menuTrees_85_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="menuTrees_85_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="若依官网"><span id="menuTrees_85_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="menuTrees_85_span">若依官网<font color="#888">&nbsp;&nbsp;&nbsp;</font></span></a></li></div>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	
+    <script src="./jquery.ztree.all-3.5.js.下载"></script>
+
+	<script type="text/javascript">
+	     $(function() {
+			var url = ctx + "system/menu/roleMenuTreeData?roleId=" + $("#roleId").val();
+			var options = {
+				id: "menuTrees",
+		        url: url,
+		        check: { enable: true },
+		        expandLevel: 0
+		    };
+			$.tree.init(options);
+		});
+	
+		$("#form-role-edit").validate({
+			onkeyup: false,
+			rules:{
+				roleName:{
+					remote: {
+		                url: ctx + "system/role/checkRoleNameUnique",
+		                type: "post",
+		                dataType: "json",
+		                data: {
+							"roleId": function() {
+							    return $("#roleId").val();
+							},
+							"roleName": function() {
+							    return $.common.trim($("#roleName").val());
+							}
+		                }
+		            }
+				},
+				roleKey:{
+					remote: {
+		                url: ctx + "system/role/checkRoleKeyUnique",
+		                type: "post",
+		                dataType: "json",
+		                data: {
+							"roleId": function() {
+								return $("#roleId").val();
+							},
+							"roleKey": function() {
+							    return $.common.trim($("#roleKey").val());
+							}
+		                }
+		            }
+				},
+				roleSort:{
+					digits:true
+				},
+			},
+			messages: {
+		        "roleName": {
+		            remote: "角色名称已经存在"
+		        },
+		        "roleKey": {
+		            remote: "角色权限已经存在"
+		        }
+		    },
+		    focusCleanup: true
+		});
+		
+		$('input').on('ifChanged', function(obj){
+			var type = $(this).val();
+			var checked = obj.currentTarget.checked;
+			if (type == 1) {
+			    if (checked) {
+			        $._tree.expandAll(true);
+			    } else {
+			        $._tree.expandAll(false);
+			    }
+			} else if (type == "2") {
+			    if (checked) {
+			        $._tree.checkAllNodes(true);
+			    } else {
+			        $._tree.checkAllNodes(false);
+			    }
+			} else if (type == "3") {
+			    if (checked) {
+			        $._tree.setting.check.chkboxType = { "Y": "ps", "N": "ps" };
+			    } else {
+			        $._tree.setting.check.chkboxType = { "Y": "", "N": "" };
+			    }
+			}
+		})
+
+		function edit() {
+			var roleId = $("input[name='roleId']").val();
+			var roleName = $("input[name='roleName']").val();
+			var roleKey = $("input[name='roleKey']").val();
+			var roleSort = $("input[name='roleSort']").val();
+			var status = $("input[id='status']").is(':checked') == true ? 0 : 1;
+			var remark = $("input[name='remark']").val();
+			var menuIds = $.tree.getCheckedNodes();
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : ctx + "system/role/edit",
+				data : {
+					"roleId": roleId,
+					"roleName": roleName,
+					"roleKey": roleKey,
+					"roleSort": roleSort,
+					"status": status,
+					"remark": remark,
+					"menuIds": menuIds
+				},
+				async : false,
+				error : function(request) {
+					$.modal.alertError("系统错误");
+				},
+				success : function(data) {
+					$.operate.successCallback(data);
+				}
+			});
+		}
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	        	edit();
+	        }
+	    }
+	</script>
+
+
+</body></html>

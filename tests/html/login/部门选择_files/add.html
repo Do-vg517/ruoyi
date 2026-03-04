@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost/system/user/add -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta content="N91+Fe6bw1CqIMr+sK7PKnWMmGTqAFs0pOnBMe3W6aM=" name="csrf-token">
+	<title>新增用户</title>
+	<link href="./bootstrap(1).min.css" rel="stylesheet">
+	<link href="./font-awesome(1).min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="./bootstrap-table.min.css" rel="stylesheet">
+	<link href="./animate(1).min.css" rel="stylesheet">
+	<link href="./style(1).min.css" rel="stylesheet">
+	<link href="./ry-ui.css" rel="stylesheet">
+
+	
+    <link href="./select2.min.css" rel="stylesheet">
+    <link href="./select2-bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./layer.css" id="layuicss-layer"><link rel="stylesheet" href="./style.css" id="layuicss-thememoonstylecss"></head>
+<body>
+    <div class="main-content">
+        <form id="form-user-add" class="form-horizontal" novalidate="novalidate">
+            <input name="deptId" type="hidden" id="treeId">
+            <h4 class="form-header h4">基本信息</h4>
+            <div class="row">
+            	<div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label is-required">用户名称：</label>
+                        <div class="col-sm-8">
+                            <input name="userName" placeholder="请输入用户名称" class="form-control valid" type="text" maxlength="30" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">归属部门：</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                            	<input name="deptName" onclick="selectDeptTree()" id="treeName" type="text" placeholder="请选择归属部门" class="form-control valid">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">手机号码：</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input id="phonenumber" name="phonenumber" placeholder="请输入手机号码" class="form-control" type="text" maxlength="11">
+                                <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">邮箱：</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input id="email" name="email" class="form-control email" type="text" maxlength="50" placeholder="请输入邮箱">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label is-required">登录账号：</label>
+                        <div class="col-sm-8">
+                            <input id="loginName" name="loginName" placeholder="请输入登录账号" class="form-control" type="text" maxlength="30" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label is-required">登录密码：</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input id="password" name="password" placeholder="请输入登录密码" class="form-control" type="password" value="123456" required="">
+                                <span class="input-group-addon" title="登录密码,鼠标按下显示密码" onmousedown="$(&#39;#password&#39;).attr(&#39;type&#39;,&#39;text&#39;)" onmouseup="$(&#39;#password&#39;).attr(&#39;type&#39;,&#39;password&#39;)"><i class="fa fa-key"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">用户性别：</label>
+                        <div class="col-sm-8">
+                            <select name="sex" class="form-control m-b select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+				                <option value="0" data-select2-id="3">男</option>
+				                <option value="1">女</option>
+				                <option value="2">未知</option>
+				            </select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="2" style="width: 543.328px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-sex-40-container"><span class="select2-selection__rendered" id="select2-sex-40-container" role="textbox" aria-readonly="true" title="男">男</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">用户状态：</label>
+                        <div class="col-sm-8">
+                            <label class="toggle-switch switch-solid">
+	                            <input type="checkbox" id="status" checked="">
+	                            <span></span>
+	                        </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">岗位：</label>
+                        <div class="col-xs-4">
+                            <select id="post" class="form-control select2-multiple select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true" data-select2-id="post">
+								<option value="1">董事长</option>
+								<option value="2">项目经理</option>
+								<option value="3">人力资源</option>
+								<option value="4">普通员工</option>
+							</select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="9" style="width: 543.328px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="请选择岗位" style="width: 541.312px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">角色：</label>
+                        <div class="col-xs-10">
+                            <label class="check-box">
+								<div class="icheckbox-blue"><input name="role" type="checkbox" value="2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>普通角色
+							</label><label class="check-box">
+								<div class="icheckbox-blue"><input name="role" type="checkbox" value="100" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>user1
+							</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="form-header h4">其他信息</h4>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">备注：</label>
+                        <div class="col-xs-10">
+                            <textarea name="remark" maxlength="500" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+      
+    <div class="row">
+        <div class="col-sm-offset-5 col-sm-10">
+            <button type="button" class="btn btn-sm btn-primary" onclick="submitHandler()"><i class="fa fa-check"></i>保 存</button>&nbsp;
+            <button type="button" class="btn btn-sm btn-danger" onclick="closeItem()"><i class="fa fa-reply-all"></i>关 闭 </button>
+        </div>
+    </div>
+	
+    <script> var ctx = "\/"; var lockscreen = null; if(lockscreen){window.top.location=ctx+"lockscreen";} </script>
+    <a id="scroll-up" href="javascript:;" class="btn btn-sm display" style="cursor: pointer; display: none; position: fixed; right: 15px; bottom: 5px;"><i class="fa fa-angle-double-up"></i></a>
+	<script src="./jquery.min(1).js.下载"></script>
+	<script src="./bootstrap.min(1).js.下载"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="./bootstrap-table.min.js.下载"></script>
+	<script src="./bootstrap-table-zh-CN.min.js.下载"></script>
+	<script src="./bootstrap-table-mobile.js.下载"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="./jquery.validate.min.js.下载"></script>
+	<script src="./jquery.validate.extend.js.下载"></script>
+	<script src="./messages_zh.js.下载"></script>
+	<!-- bootstrap-table 表格树插件 -->
+	<script src="./bootstrap-table-tree.min.js.下载"></script>
+	<!-- 遮罩层 -->
+	<script src="./jquery.blockUI(1).js.下载"></script>
+    <script src="./icheck.min.js.下载"></script>
+	<script src="./layer.min(1).js.下载"></script>
+	<script src="./layui.min.js.下载"></script>
+	<script src="./common.js.下载"></script>
+	<script src="./ry-ui.js.下载"></script>
+
+	
+    <script src="./select2.min.js.下载"></script>
+
+	<script>
+	    var prefix = ctx + "system/user";
+	
+        $("#form-user-add").validate({
+        	onkeyup: false,
+        	rules:{
+        		loginName:{
+        			minlength: 2,
+        			maxlength: 20,
+        			remote: {
+                        url: prefix + "/checkLoginNameUnique",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                        	"loginName": function() {
+                                return $.common.trim($("#loginName").val());
+                            }
+                        }
+                    }
+        		},
+        		password:{
+        			minlength: 5,
+        			maxlength: 20,
+        			specialSign: true
+        		},
+        		email:{
+                    email:true,
+                    remote: {
+                        url: prefix + "/checkEmailUnique",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            "email": function () {
+                                return $.common.trim($("#email").val());
+                            }
+                        }
+                    }
+        		},
+        		phonenumber:{
+        			isPhone:true,
+                    remote: {
+                        url: prefix + "/checkPhoneUnique",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            "phonenumber": function () {
+                                return $.common.trim($("#phonenumber").val());
+                            }
+                        }
+                    }
+        		},
+        	},
+        	messages: {
+                "loginName": {
+                    remote: "用户已经存在"
+                },
+        		"email": {
+                    remote: "Email已经存在"
+                },
+        		"phonenumber":{
+                	remote: "手机号码已经存在"
+        		}
+            },
+            focusCleanup: true
+        });
+        
+        function submitHandler() {
+        	var chrtype = 0;
+			var password = $("#password").val();
+	        if ($.validate.form() && checkpwd(chrtype, password)) {
+	        	var data = $("#form-user-add").serializeArray();
+	        	var status = $("input[id='status']").is(':checked') == true ? 0 : 1;
+	        	var roleIds = $.form.selectCheckeds("role");
+	        	var postIds = $.form.selectSelects("post");
+	        	data.push({"name": "status", "value": status});
+	        	data.push({"name": "roleIds", "value": roleIds});
+	        	data.push({"name": "postIds", "value": postIds});
+	        	$.operate.saveTab(prefix + "/add", data);
+	        }
+	    }
+         
+        /* 用户管理-新增-选择部门树 */
+        function selectDeptTree() {
+        	var treeId = $("#treeId").val();
+        	var deptId = $.common.isEmpty(treeId) ? "100" : $("#treeId").val();
+        	var url = ctx + "system/user/selectDeptTree/" + deptId;
+            var btn = ['<i class="fa fa-check"></i> 确认', '<i class="fa fa-trash-o"></i> 清除', '<i class="fa fa-close"></i> 关闭'];
+			var options = {
+				title: '选择部门',
+				width: "380",
+				url: url,
+				btn: btn,
+				btn2: function(index, layero) {
+				    $("#treeId").val("");
+				    $("#treeName").val("");
+				    $.modal.close(index);
+				},
+				callBack: doSubmit
+			};
+			$.modal.openOptions(options);
+		}
+		
+		function doSubmit(index, layero){
+			var body = $.modal.getChildFrame(index);
+   			$("#treeId").val(body.find('#treeId').val());
+   			$("#treeName").val(body.find('#treeName').val());
+   			$.modal.close(index);
+		}
+
+		$(function() {
+            $('#post').select2({
+                placeholder: "请选择岗位",
+                allowClear: true
+            });
+        })
+    </script>
+
+</body></html>
