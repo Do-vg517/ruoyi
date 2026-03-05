@@ -13,6 +13,8 @@ class HomePage(BasePage):
     logout_btn = (By.CSS_SELECTOR, "a[href*='logout']")
     # 个人中心
     profile_link = (By.CSS_SELECTOR, "a[href*='profile']")
+    # 头像图片
+    avatar_img = (By.CSS_SELECTOR, ".user-panel .image img")
 
     def is_loaded(self, timeout=10):
         """验证首页是否加载完成"""
@@ -67,9 +69,10 @@ class HomePage(BasePage):
             raise
 
     def go_to_profile(self):
-        """进入个人中心"""
+        """进入个人中心 (点击头像)"""
         try:
-            self.click(*self.profile_link)
+            # self.click(*self.profile_link)
+            self.click(*self.avatar_img)
         except Exception as e:
             self.logger.error(f"Go to profile failed: {e}")
             raise

@@ -68,3 +68,5 @@ delete_role_data:
 reset_pwd_data:
   - login_name: "test_user_01"
     new_password: "NewPassword123"
+
+
